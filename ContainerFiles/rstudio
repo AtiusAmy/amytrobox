@@ -1,0 +1,15 @@
+FROM quay.io/centos/centos:stream9
+
+LABEL com.github.containers.toolbox="true" \
+      usage="Rstudio is annoying" \
+      summary="This will be a pain" \
+      maintainer="amy.rise141@simplelogin.com"
+
+# Copy the setup scripts and package list
+COPY ../scripts/rstudio.sh /
+COPY ../scripts/distrobox-shims.sh /
+COPY ../packages/rstudio.packages /
+
+# Run the setup scripts
+RUN chmod +x rstudio.sh distrobox-shims.sh && /rstudio.sh
+RUN rm /rstudio.sh /distrobox-shims.sh /rstudio.packages
