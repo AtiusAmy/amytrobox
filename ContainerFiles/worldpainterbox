@@ -9,8 +9,8 @@ LABEL com.github.containers.toolbox="true" \
 # Copy the setup scripts and package list
 COPY ../scripts/worldpainterbox.sh /
 COPY ../scripts/distrobox-shims.sh /
-COPY ../packages/worldpainterbox.packages /
+
 
 # Run the setup scripts
 RUN chmod +x worldpainterbox.sh distrobox-shims.sh && /worldpainterbox.sh
-RUN rm /worldpainterbox.sh /distrobox-shims.sh /worldpainterbox.packages
+RUN rm /worldpainterbox.sh /distrobox-shims.sh 
