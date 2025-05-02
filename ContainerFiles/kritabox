@@ -8,7 +8,7 @@ LABEL com.github.containers.toolbox="true" \
 # Copy the setup scripts and package list
 COPY ../scripts/kritabox.sh /
 COPY ../scripts/distrobox-shims.sh /
-COPY ../packages/boxkit.packages /
+COPY ../packages/kritabox.packages /
 
 # Run the setup scripts
 RUN chmod +x kritabox.sh distrobox-shims.sh && /kritabox.sh
