@@ -6,7 +6,9 @@
 # Update the container and install packages
 
 
-dnf5 -y config-manager --add-repo https://repo.secureblue.dev/secureblue.repo
+
+
+dnf5 -y config-manager addrepo --from-repofile=https://repo.secureblue.dev/secureblue.repo
 dnf5 -y update
 
 grep -v '^#' ./kritabox.packages | xargs apk add
