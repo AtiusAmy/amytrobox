@@ -6,6 +6,7 @@ LABEL com.github.containers.toolbox="true" \
       maintainer="amy.rise141@simplelogin.com"
 
 # Copy the setup scripts and package list
+
 COPY ../scripts/rstudio.sh /
 COPY ../scripts/distrobox-shims.sh /
 COPY ../packages/rstudio.packages /
