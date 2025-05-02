@@ -1,0 +1,15 @@
+FROM quay.io/fedora/fedora-toolbox:latest
+
+LABEL com.github.containers.toolbox="true" \
+      usage="Installing Trivalent easily" \
+      summary="Distrobox do not support some SELinux feature, better using it on your image if possible" \
+      maintainer="amy.rise141@simplelogin.com"
+
+# Copy the setup scripts and package list
+COPY ../scripts/trivalentbox.sh /
+COPY ../scripts/distrobox-shims.sh /
+COPY ../packages/trivalentbox.packages /
+
+# Run the setup scripts
+RUN chmod +x trivalentbox.sh distrobox-shims.sh && /trivalentbox.sh
+RUN rm /trivalentbox.sh /distrobox-shims.sh /trivalentbox.packages

@@ -1,0 +1,15 @@
+FROM quay.io/toolbx-images/alpine-toolbox:edge
+
+LABEL com.github.containers.toolbox="true" \
+      usage="This is an image that gets Krita working with Breeze" \
+      summary="Do not report bugs to Krita, this is not officially supported" \
+      maintainer="amy.rise141@simplelogin.com"
+
+# Copy the setup scripts and package list
+COPY ../scripts/kritabox.sh /
+COPY ../scripts/distrobox-shims.sh /
+COPY ../packages/boxkit.packages /
+
+# Run the setup scripts
+RUN chmod +x kritabox.sh distrobox-shims.sh && /kritabox.sh
+RUN rm /kritabox.sh /distrobox-shims.sh /kritabox.packages

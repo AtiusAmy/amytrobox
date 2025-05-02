@@ -5,4 +5,4 @@
 
 # Update the container and install packages
 apk update && apk upgrade
-grep -v '^#' ./boxkit.packages | xargs apk add
+grep -v '^#' ./kritabox.packages | xargs apk add
