@@ -10,7 +10,7 @@ on:
     paths-ignore: # don't rebuild on documentation change
       - '**.md'
   schedule:
-    - cron: '0 0 * * TUE'
+    - cron: '0 0 * * *'
 
 env:
     IMAGE_TAGS: latest
