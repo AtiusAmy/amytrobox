@@ -1,6 +1,5 @@
 blender
-hip
-runtime-amd
+hip-runtime-amd
 libxkbcommon-x11
 libepoxy
 libdecor
