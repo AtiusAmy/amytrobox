@@ -4,5 +4,5 @@
 ./distrobox-shims.sh
 
 # Update the container and install packages
-pacman -Syu -y
-grep -v '^#' ./blenderbox.packages | xargs pacman -S -y
+pacman -Syu
+grep -v '^#' ./blenderbox.packages | xargs pacman -S
