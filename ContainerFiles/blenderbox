@@ -1,7 +1,7 @@
 FROM quay.io/toolbx/arch-toolbox:latest
 
 LABEL com.github.containers.toolbox="true" \
-      usage="This is an image that gets Blender HIP on AMD" \
+      usage="HIP blender" \
       summary="Do not report bugs to Blender, this is not officially supported" \
       maintainer="amy.rise141@simplelogin.com"
 
