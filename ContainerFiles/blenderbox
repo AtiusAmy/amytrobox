@@ -1,0 +1,15 @@
+FROM quay.io/toolbx-images/arch-toolbox:latest
+
+LABEL com.github.containers.toolbox="true" \
+      usage="This is an image that gets Blender HIP on AMD" \
+      summary="Do not report bugs to Blender, this is not officially supported" \
+      maintainer="amy.rise141@simplelogin.com"
+
+# Copy the setup scripts and package list
+COPY ../scripts/blenderbox.sh /
+COPY ../scripts/distrobox-shims.sh /
+COPY ../packages/blenderbox.packages /
+
+# Run the setup scripts
+RUN chmod +x blenderbox.sh distrobox-shims.sh && /blenderbox.sh
+RUN rm /blenderbox.sh /distrobox-shims.sh /blenderbox.packages
