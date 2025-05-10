@@ -1,8 +1,8 @@
 FROM quay.io/toolbx/arch-toolbox:latest
 
 LABEL com.github.containers.toolbox="true" \
-      usage="HIP blender" \
-      summary="Do not report bugs to Blender, this is not officially supported" \
+      usage="This is an image that blender" \
+      summary="blender" \
       maintainer="amy.rise141@simplelogin.com"
 
 # Copy the setup scripts and package list
