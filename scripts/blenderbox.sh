@@ -5,4 +5,4 @@
 
 # Update the container and install packages
 pacman -Syu
-grep -v '^#' ./blenderbox.packages | xargs pacman -Syu
+grep -v '^#' ./blenderbox.packages | xargs pacman -Syu --noconfirm
