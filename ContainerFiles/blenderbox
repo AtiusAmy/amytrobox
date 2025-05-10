@@ -13,3 +13,6 @@ COPY ../packages/blenderbox.packages /
 # Run the setup scripts
 RUN chmod +x blenderbox.sh distrobox-shims.sh && /blenderbox.sh
 RUN rm /blenderbox.sh /distrobox-shims.sh /blenderbox.packages
+RUN sed -i 's/-march=x86-64 -mtune=generic/-march=native -mtune=native/g' /etc/makepkg.conf && \
+    rm -rf \
+        /tmp/*
