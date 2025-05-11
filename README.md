@@ -44,6 +44,6 @@ distrobox-export --app /usr/share/applications/blender.desktop
 
 # Update
 
-Copy the quadlets files to ~/.local/share/containers/systemd and run `systemctl enable --now podman-auto-update.timer`
+Copy the quadlets files to ~/.config/containers/systemd and run `systemctl enable --now podman-auto-update`
 
 alternatively to manually update `podman pull <name of the distrobox>` and then restart the distrobox.
