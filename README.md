@@ -42,6 +42,14 @@ If you use NVIDIA, feel free to ignore this. This is mainly for HIP support in A
 distrobox-export --app /usr/share/applications/blender.desktop
 ```
 
+## Hardinfobox
+
+Looking at hardware info
+
+```
+distrobox-export --app /usr/share/applications/hardinfo.desktop
+```
+
 # Update
 
 Copy the quadlets files to ~/.config/containers/systemd and run `systemctl enable --now podman-auto-update`
