@@ -9,11 +9,23 @@ LABEL com.github.containers.toolbox="true" \
 COPY ../scripts/hardinfobox.sh /
 COPY ../scripts/distrobox-shims.sh /
 COPY ../packages/hardinfobox.packages /
-COPY ../packages/hardinfobox-aur.packages /
+USER build
+WORKDIR /home/build
+RUN paru -S \
+        aur/protontricks \
+        aur/vkbasalt \
+        aur/lib32-vkbasalt \
+        aur/obs-vkcapture-git \
+        aur/lib32-obs-vkcapture-git \
+        aur/lib32-gperftools \
+        aur/steamcmd \
+        --noconfirm
+USER root
+WORKDIR /
 
 # Run the setup scripts
 RUN chmod +x hardinfobox.sh distrobox-shims.sh && /hardinfobox.sh
-RUN rm /hardinfobox.sh /distrobox-shims.sh /hardinfobox.packages /hardinfobox-aur.packages
+RUN rm /hardinfobox.sh /distrobox-shims.sh /hardinfobox.packages
 RUN sed -i 's/-march=x86-64 -mtune=generic/-march=native -mtune=native/g' /etc/makepkg.conf && \
     rm -rf \
         /tmp/*

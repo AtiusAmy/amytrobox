@@ -6,4 +6,3 @@
 # Update the container and install packages
 pacman -Syu
 grep -v '^#' ./hardinfobox.packages | xargs pacman -Syu --noconfirm --needed
-grep -v '^#' ./hardinfobox-aur.packages | xargs paru -S --noconfirm
