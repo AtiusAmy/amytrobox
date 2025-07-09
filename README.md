@@ -47,7 +47,7 @@ distrobox-export --app /usr/share/applications/blender.desktop
 Looking at hardware info
 
 ```
-distrobox-export --app /usr/share/applications/hardinfo.desktop
+distrobox-export --app /usr/share/applications/hardinfo2.desktop
 ```
 
 # Update
