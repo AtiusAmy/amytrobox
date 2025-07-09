@@ -1,0 +1,19 @@
+FROM ghcr.io/ublue-os/arch-toolbox:latest
+
+LABEL com.github.containers.toolbox="true" \
+      usage="This is an image for hardinfo2" \
+      summary="blender" \
+      maintainer="amy.rise141@simplelogin.com"
+
+# Copy the setup scripts and package list
+COPY ../scripts/hardinfobox.sh /
+COPY ../scripts/distrobox-shims.sh /
+COPY ../packages/hardinfobox.packages /
+COPY ../packages/hardinfobox-aur.packages /
+
+# Run the setup scripts
+RUN chmod +x hardinfobox.sh distrobox-shims.sh && /hardinfobox.sh
+RUN rm /hardinfobox.sh /distrobox-shims.sh /hardinfobox.packages /hardinfobox-aur.packages
+RUN sed -i 's/-march=x86-64 -mtune=generic/-march=native -mtune=native/g' /etc/makepkg.conf && \
+    rm -rf \
+        /tmp/*
