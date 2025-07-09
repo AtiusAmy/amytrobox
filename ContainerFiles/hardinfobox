@@ -5,6 +5,10 @@ LABEL com.github.containers.toolbox="true" \
       summary="blender" \
       maintainer="amy.rise141@simplelogin.com"
 
+RUN useradd -m --shell=/bin/bash build && usermod -L build && \
+    echo "build ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers && \
+    echo "root ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+
 # Copy the setup scripts and package list
 COPY ../scripts/hardinfobox.sh /
 COPY ../scripts/distrobox-shims.sh /
@@ -12,13 +16,7 @@ COPY ../packages/hardinfobox.packages /
 USER build
 WORKDIR /home/build
 RUN paru -S \
-        aur/protontricks \
-        aur/vkbasalt \
-        aur/lib32-vkbasalt \
-        aur/obs-vkcapture-git \
-        aur/lib32-obs-vkcapture-git \
-        aur/lib32-gperftools \
-        aur/steamcmd \
+        aur/hardinfo2-git \
         --noconfirm
 USER root
 WORKDIR /
