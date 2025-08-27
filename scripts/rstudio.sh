@@ -6,7 +6,8 @@
 # Update the container and install packages
 
 dnf -y update
-dnf -y install wget tar
+dnf -y install wget tar epel-release
+dnf config-manager --set-enabled crb
 wget https://download1.rstudio.org/electron/rhel9/x86_64/rstudio-2025.05.1-513-x86_64.rpm
 
 grep -v '^#' ./rstudio.packages | xargs dnf -y install
