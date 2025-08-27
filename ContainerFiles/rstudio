@@ -1,4 +1,4 @@
-FROM  quay.io/toolbx-images/rockylinux-toolbox:9 
+FROM  quay.io/toolbx-images/alma-toolbox:10
 
 LABEL com.github.containers.toolbox="true" \
       usage="Rstudio is annoying" \
