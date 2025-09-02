@@ -5,4 +5,4 @@
 
 # Update the container and install packages
 dnf update
-grep -v '^#' ./kritabox.packages | xargs dnf install
+grep -v '^#' ./kritabox.packages | xargs dnf install -y
