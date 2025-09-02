@@ -5,4 +5,4 @@
 
 # Update the container and install packages
 apt update && apt upgrade
-grep -v '^#' ./gsmartcontrolbox.packages | xargs apt install
+grep -v '^#' ./gsmartcontrolbox.packages | xargs apt install -y
