@@ -5,7 +5,7 @@ Description=Distrobox for trivalent
 Annotation=run.oci.keep_original_groups=1
 Pull=newers
 AutoUpdate=registry
-ContainerName=trivalentbox-distrobox-quadlet
+ContainerName=trivalentbox
 Environment=SHELL=%s
 Environment=HOME=%h
 Environment=container=podman

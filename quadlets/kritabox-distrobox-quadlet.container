@@ -5,7 +5,7 @@ Description=Distrobox for Kritaboox
 Annotation=run.oci.keep_original_groups=1
 Pull=newer
 AutoUpdate=registry
-ContainerName=kritabox-distrobox-quadlet
+ContainerName=kritabox
 Environment=SHELL=%s
 Environment=HOME=%h
 Environment=container=podman

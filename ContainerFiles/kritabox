@@ -1,4 +1,4 @@
-FROM quay.io/toolbx-images/alpine-toolbox:edge
+FROM quay.io/fedora/fedora-toolbox:42
 
 LABEL com.github.containers.toolbox="true" \
       usage="This is an image that gets Krita working with Breeze" \

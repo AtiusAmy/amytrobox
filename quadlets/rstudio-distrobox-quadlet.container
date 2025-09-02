@@ -5,7 +5,7 @@ Description=Distrobox for rstudiobox
 Annotation=run.oci.keep_original_groups=1
 Pull=newer
 AutoUpdate=registry
-ContainerName=rstudiobox-distrobox-quadlet
+ContainerName=rstudiobox
 Environment=SHELL=%s
 Environment=HOME=%h
 Environment=container=podman

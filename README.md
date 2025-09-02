@@ -50,6 +50,15 @@ Looking at hardware info
 distrobox-export --app /usr/share/applications/hardinfo2.desktop
 ```
 
+## Gsmartcontrolbox
+
+Look at the health of a drive
+
+```
+distrobox-export --app /usr/share/applications/gsmartcontrol.desktop
+```
+
+
 # Update
 
 Copy the quadlets files to ~/.config/containers/systemd and run `systemctl enable --now podman-auto-update`

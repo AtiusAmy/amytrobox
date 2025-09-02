@@ -1,17 +1,17 @@
 [Unit]
-Description=Distrobox for Blender
+Description=Distrobox for gsmartcontrol
 
 [Container]
 Annotation=run.oci.keep_original_groups=1
 Pull=newer
 AutoUpdate=registry
-ContainerName=hardinfobox
+ContainerName=gsmartcontrolbox
 Environment=SHELL=%s
 Environment=HOME=%h
 Environment=container=podman
 Exec=--verbose --name %u --user %U --group %G --home %h --init "0" --nvidia "1" -- " "
-Image=ghcr.io/atiusamy/hardinfobox:latest
-HostName=hardinfobox ~
+Image=ghcr.io/atiusamy/gsmartcontrolbox:latest
+HostName=gsmartcontrolbox ~
 Label=manager=distrobox
 Network=host
 PodmanArgs=--entrypoint /usr/bin/entrypoint

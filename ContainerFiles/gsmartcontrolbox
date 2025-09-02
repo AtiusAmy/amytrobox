@@ -1,0 +1,15 @@
+FROM quay.io/toolbx-images/debian-toolbox:unstable
+
+LABEL com.github.containers.toolbox="true" \
+      usage="This is an image to see drive health" \
+      summary="gsmartcontrol" \
+      maintainer="amy.rise141@simplelogin.com"
+
+# Copy the setup scripts and package list
+COPY ../scripts/gsmartcontrolbox.sh /
+COPY ../scripts/distrobox-shims.sh /
+COPY ../packages/gsmartcontrolbox.packages /
+
+# Run the setup scripts
+RUN chmod +x gsmartcontrolbox.sh distrobox-shims.sh && /gsmartcontrolbox.sh
+RUN rm /gsmartcontrolbox.sh /distrobox-shims.sh /gsmartcontrolbox.packages

@@ -4,5 +4,5 @@
 ./distrobox-shims.sh
 
 # Update the container and install packages
-dnf update
-grep -v '^#' ./kritabox.packages | xargs dnf install
+apt update && apt upgrade
+grep -v '^#' ./gsmartcontrolbox.packages | xargs apt install
