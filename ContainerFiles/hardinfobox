@@ -1,29 +1,14 @@
-FROM ghcr.io/ublue-os/arch-toolbox:latest
-
+FROM quay.io/toolbx-images/alpine-toolbox:edge
 LABEL com.github.containers.toolbox="true" \
       usage="This is an image for hardinfo2" \
       summary="blender" \
       maintainer="amy.rise141@simplelogin.com"
 
-RUN useradd -m --shell=/bin/bash build && usermod -L build && \
-    echo "build ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers && \
-    echo "root ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
-
 # Copy the setup scripts and package list
 COPY ../scripts/hardinfobox.sh /
 COPY ../scripts/distrobox-shims.sh /
 COPY ../packages/hardinfobox.packages /
-USER build
-WORKDIR /home/build
-RUN paru -S \
-        aur/hardinfo2-git \
-        --noconfirm
-USER root
-WORKDIR /
 
 # Run the setup scripts
 RUN chmod +x hardinfobox.sh distrobox-shims.sh && /hardinfobox.sh
 RUN rm /hardinfobox.sh /distrobox-shims.sh /hardinfobox.packages
-RUN sed -i 's/-march=x86-64 -mtune=generic/-march=native -mtune=native/g' /etc/makepkg.conf && \
-    rm -rf \
-        /tmp/*

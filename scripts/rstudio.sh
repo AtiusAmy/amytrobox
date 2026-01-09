@@ -13,5 +13,5 @@ wget https://download1.rstudio.org/electron/rhel9/x86_64/rstudio-2026.01.0-392-x
 grep -v '^#' ./rstudio.packages | xargs dnf -y install
 dnf -y install rstudio-2026.01.0-392-x86_64.rpm
 rm rstudio-2026.01.0-392-x86_64.rpm
-dnf -y install https://rpmfind.net/linux/fedora/linux/updates/41/Everything/x86_64/Packages/a/adw-gtk3-theme-5.6-1.fc41.noarch.rpm
+dnf -y install https://rpmfind.net/linux/fedora/linux/updates/testing/43/Everything/x86_64/Packages/a/adw-gtk3-theme-6.4-1.fc43.noarch.rpm
 

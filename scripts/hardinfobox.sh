@@ -4,5 +4,5 @@
 ./distrobox-shims.sh
 
 # Update the container and install packages
-pacman -Syu
-grep -v '^#' ./hardinfobox.packages | xargs pacman -Syu --noconfirm --needed
+apk update && apk upgrade
+grep -v '^#' ./hardinfobox.packages | xargs apk add -y
