@@ -1,4 +1,4 @@
-FROM  quay.io/centos/centos:10
+FROM docker.io/library/almalinux:10
 
 LABEL com.github.containers.toolbox="true" \
       usage="Rstudio is annoying" \
