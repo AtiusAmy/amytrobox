@@ -5,4 +5,4 @@
 
 # Update the container and install packages
 apk update && apk upgrade
-grep -v '^#' ./hardinfobox.packages | xargs apk add -y
+grep -v '^#' ./hardinfobox.packages | xargs apk add
